@@ -8,7 +8,7 @@
     "repository": "https://github.com/google/boringssl.git",
     "revision": "cff1385e77b9b2095558fa625b3c35d589ffe09b"
   },
-  "release": "v0.1.0",
+  "release": "v0.1.1",
   "targets": [
     "macos-arm64",
     "macos-x64",

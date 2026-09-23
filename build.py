@@ -151,6 +151,11 @@ def main():
     shutil.copytree(ROOT / 'licenses', stage / 'licenses', dirs_exist_ok=True)
     (stage / 'cmake').mkdir(exist_ok=True)
     shutil.copyfile(ROOT / 'cmake/EchHttpDeps.cmake', stage / 'cmake/EchHttpDeps.cmake')
+    # Test the shipped imported targets, including transitive system frameworks.
+    consumer_build = work / 'consumer'
+    run([cmake, '-S', ROOT / 'smoke', '-B', consumer_build, *common,
+         f'-DEH_DEPS_ROOT={stage}'], env=env)
+    run([cmake, '--build', consumer_build, '--parallel', parallel], env=env)
     metadata = {'schema': 1, 'release': manifest['release'], 'target': target,
                 'curl': manifest['curl'], 'boringssl': manifest['boringssl'],
                 'build_commit': os.environ.get('GITHUB_SHA', 'local'),

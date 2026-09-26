@@ -8,12 +8,17 @@
     "repository": "https://github.com/google/boringssl.git",
     "revision": "cff1385e77b9b2095558fa625b3c35d589ffe09b"
   },
-  "release": "v0.1.1",
+  "release": "v0.1.2",
   "targets": [
     "macos-arm64",
     "macos-x64",
     "ios-arm64-device",
     "ios-arm64-simulator",
     "ios-x64-simulator"
-  ]
+  ],
+  "zlib": {
+    "version": "1.3.2",
+    "url": "https://github.com/madler/zlib/releases/download/v1.3.2/zlib-1.3.2.tar.gz",
+    "sha256": "bb329a0a2cd0274d05519d61c667c062e06990d72e125ee2dfa8de64f0119d16"
+  }
 }
